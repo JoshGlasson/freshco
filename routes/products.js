@@ -6,7 +6,9 @@ mongoClient.connect('mongodb://localhost:27017', function(err, client){
     console.log('Connected to MongoDB!');
     mongoDb = client.db('freshco');
   }
-}); //27017 is the port mongodb is running on
+}); 
+
+// 27017 is the port mongodb is running on
 
 exports.ping = function(req, res){
   res.status(200).send('hello');
@@ -35,12 +37,14 @@ exports.getProductsByEAN = function(req, res){
 };
 
 exports.addProduct = function(req, res){
+
   var productToAdd = req.body;
+  
   var productsCollection = mongoDb.collection('products');
+  
   productsCollection.insertOne(productToAdd, function(err, response) {
     if (!err) {
-      response.sendStatus(201);
+      res.sendStatus(201);
     }
   });
-
 };
