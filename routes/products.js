@@ -45,6 +45,7 @@ export function addProduct(req, res){
   productsCollection.insertOne(productToAdd, function(err, response) {
     if (!err) {
       res.sendStatus(201);
+      console.log(response);
     }
   });
 }
