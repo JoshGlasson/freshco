@@ -1,14 +1,14 @@
-var express = require('express');
-var productsRoute = require('./routes/products');
-var bodyParser = require('body-parser');
+import express from 'express';
+import { ping, getProducts, getProductsByEAN, addProduct } from './routes/products';
+import { json } from 'body-parser';
 
 var app = express();
-app.use(bodyParser.json());
+app.use(json());
 
-app.get('/api/ping', productsRoute.ping);
-app.get('/api/products', productsRoute.getProducts);
-app.get('/api/products/:ean', productsRoute.getProductsByEAN);
-app.post('/api/products', productsRoute.addProduct);
+app.get('/api/ping', ping);
+app.get('/api/products', getProducts);
+app.get('/api/products/:ean', getProductsByEAN);
+app.post('/api/products', addProduct);
 
 app.listen(5050, function(err){
   if (!err) {

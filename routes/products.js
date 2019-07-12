@@ -1,4 +1,4 @@
-var mongoClient = require('mongodb').MongoClient
+import { MongoClient as mongoClient } from 'mongodb';
 
 var mongoDb = {};
 mongoClient.connect('mongodb://localhost:27017', function(err, client){
@@ -10,21 +10,21 @@ mongoClient.connect('mongodb://localhost:27017', function(err, client){
 
 // 27017 is the port mongodb is running on
 
-exports.ping = function(req, res){
+export function ping(req, res){
   res.status(200).send('hello');
-};
+}
 
-exports.getProducts = function(req, res){
+export function getProducts(req, res){
   var productsCollection = mongoDb.collection('products');
   productsCollection.find().toArray(function(err, products){
     if (!err) {
       res.status(200).send(products);
     }
   });
-};
+}
 
 
-exports.getProductsByEAN = function(req, res){
+export function getProductsByEAN(req, res){
 
   var requestedEAN = req.params.ean;
 
@@ -34,9 +34,9 @@ exports.getProductsByEAN = function(req, res){
       res.status(200).send(products);
     }
   });
-};
+}
 
-exports.addProduct = function(req, res){
+export function addProduct(req, res){
 
   var productToAdd = req.body;
   
@@ -47,4 +47,4 @@ exports.addProduct = function(req, res){
       res.sendStatus(201);
     }
   });
-};
+}
