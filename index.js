@@ -15,3 +15,7 @@ app.listen(5050, function(err){
     console.log("Freshco Product API is listening on port 5050...");
   }
 });
+
+
+// Start with nodemon -r esm server.js to get ES6 working
+
