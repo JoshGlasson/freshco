@@ -21,20 +21,18 @@ sudo chown -R `id -un` /data/db
 ```
 
 Then in the terminal 
+- `$ mongod`
 
-`$ mongod`
 In a new terminal tab/window
-
-`$ mongo`
+- `$ mongo`
 
 In the `mongo` window, to create the new database
-
-`use <database name>`
+- `use <database name>`
 
 Enter `db` to confirm you are in the new database
 
 To create a collection
 
-`db.createCollection("myCollection")`
+- `db.createCollection("myCollection")`
 
 Enter `quit()` to exit `mongo`
