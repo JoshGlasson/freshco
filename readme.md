@@ -4,7 +4,8 @@
 
 `npm install` to get the necessary packages
 
-`nodemon` is used to run the server, it reloads it upon saving any changes to the files
+`nodemon` is used to run the server, it reloads it upon saving any changes to the files.
+
 `esm` allows you to use ES6 imports
 
 Run the code with `nodemon -r esm index.js`
