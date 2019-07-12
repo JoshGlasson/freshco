@@ -17,5 +17,5 @@ app.listen(5050, function(err){
 });
 
 
-// Start with nodemon -r esm server.js to get ES6 working
+// Start with nodemon -r esm index.js to get ES6 working
 
